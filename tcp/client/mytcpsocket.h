@@ -16,10 +16,12 @@ public:
 signals:
   void finished();
 public slots:
+  void handleError(QAbstractSocket::SocketError socketError);
   void connected();
   void readyRead();
+  void waitForConnect();
 private:
-    QTcpSocket *socket;
+    QTcpSocket socket;
     
 };
 
